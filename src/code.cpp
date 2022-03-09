@@ -13,9 +13,17 @@ namespace assignment {
 
   // Task 2
   bool check_bit(int mask, int bit_pos) {
-
-    // Write your code here ...
-
+    int t;
+    if (mask < 0) {
+      t = (mask & (1 << (bit_pos+1)));
+    }
+    else {
+      t = (mask & (1 << (bit_pos)));
+    }
+    t = t >> bit_pos;
+    if (t % 2 == 1){
+      return true;
+    }
     return false;
   }
 
