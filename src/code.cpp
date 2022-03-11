@@ -8,7 +8,6 @@ namespace assignment {
   // Task 1
   int squared_diff(int left, int right) {
     return (left - right) * (left - right);
-    return 0;
   }
 
   // Task 2
@@ -29,48 +28,82 @@ namespace assignment {
 
   // Task 3
   int max3(int left, int middle, int right) {
-
-    // Write your code here ...
-
-    return 0;
+    if (left >= middle) {
+      if (left >= right) {
+        return left;
+      }
+      return right;
+    }
+    if (middle >= right) {
+      return middle;
+    }
+    return right;
   }
 
   // Task 4
   void swap_args(int *left, int *right) {
-
-    // Write your code here ...
+    if (left != NULL) {
+      if (right != NULL) {
+        int t = *left;
+        *left = *right;
+        *right = t;
+      }
+    }
   }
 
   // Task 5
   int arr_sum(int *arr, int length) {
-
-    // Write your code here ...
-
-    return 0;
+    int rez = 0;
+    if (arr != NULL) {
+      if (length > 0) {
+        for (int i = 0; i < length; i++) {
+          rez += arr[i];
+        }
+      }
+    }
+    return rez;
   }
 
   // Task 6
   int *find_max_elem(int *arr, int length) {
-
-    // Write your code here ...
-
-    return nullptr;
+    int *adds = nullptr;
+    if ((arr != NULL) && (length > 0)) {
+      int max = arr[0];
+      adds = &arr[0];
+      for (int i = 1; i < length; i++) {
+        if (max < arr[i]) {
+          max = arr[i];
+          adds = &arr[i];
+        }
+      }
+    }
+    return adds;
   }
 
   // Task 7
   int *allocate_arr(int length, int init_value) {
-
-    // Write your code here ...
-
+    if (length > 0) {
+      int *arr = new int[length];
+      for (int i = 0; i < length; i++) {
+        arr[i] = init_value;
+      }
+      return arr;
+    }
     return nullptr;
   }
 
   // Task 8
   int *clone_arr(int *arr_in, int length) {
-
-    // Write your code here ...
-
-    return nullptr;
+    if ((arr_in != NULL) && (length > 0)) {
+      int *new_arr = new int[length];
+      for (int i = 0; i < length; i++) {
+        new_arr[i] = arr_in[i];
+      }
+      return new_arr;
+    }
+    else {
+      return nullptr;
+    }
   }
 
   // Task 9
